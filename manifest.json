@@ -1,0 +1,13 @@
+{
+	"manifest_version": 2,
+	"name": "OCS Enhancement Suite",
+	"version": "1.0",
+	"description": "Suite to add additional functionality to the OCS website for an smoother user experience",
+	"content_scripts":
+	[
+		{
+			"matches": ["https://ocs.ca/*"],
+			"js": ["content.js"]
+		}
+	]
+}
