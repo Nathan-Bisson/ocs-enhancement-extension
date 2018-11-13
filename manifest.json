@@ -6,8 +6,8 @@
 	"content_scripts":
 	[
 		{
-			"matches": ["https://ocs.ca/*"],
-			"js": ["content.js"]
+			"matches": ["https://ocs.ca/collections/*"],
+			"js": ["jquery.min.js", "content.js"]
 		}
 	]
 }
