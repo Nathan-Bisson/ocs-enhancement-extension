@@ -10,6 +10,8 @@ function getProductUrls() {
 }
 
 function editProductData(count, productUrl) {
+	var classTag = '.product-tile__price' + ':eq(' + count + ')';
+	$(classTag).replaceWith( '<ul class="product-tile__price" style="list-style: none;"></ul>');
 	$.ajax({
 		type: 'GET',
 		url: productUrl,
@@ -20,11 +22,11 @@ function editProductData(count, productUrl) {
 			for (var i = 0; i < units.length; i++) {
 				var weight = units[i].title;
 				var price = units[i].price;
-				var unitString = weight + ': ' + price + ' ';
-				productInfoString += unitString;
+				var unitListItem = '<li>' + weight + ': ' + price + '</li>';
+				$(classTag).append(unitListItem);
+				//productInfoString += unitString;
 			}
-			var classTag = '.product-tile__price' + ':eq(' + count + ')';
-			$(classTag).text(productInfoString);
+			//$(classTag).text(productInfoString);
 		},
 		error: function() {
 			console.log('Error Loading');
