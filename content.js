@@ -10,7 +10,6 @@ function getProductUrls() {
 }
 
 function editProductData(count, productUrl) {
-	console.log(count + ' ' + productUrl);
 	$.ajax({
 		type: 'GET',
 		url: productUrl,
