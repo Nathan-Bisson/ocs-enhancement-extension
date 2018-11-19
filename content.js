@@ -24,9 +24,7 @@ function editProductData(count, productUrl) {
 				var price = units[i].price;
 				var unitListItem = '<li>' + weight + ': ' + price + '</li>';
 				$(classTag).append(unitListItem);
-				//productInfoString += unitString;
 			}
-			//$(classTag).text(productInfoString);
 		},
 		error: function() {
 			console.log('Error Loading');
