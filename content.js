@@ -4,7 +4,6 @@ getProductUrls();
 
 function getProductUrls() {
 	for(var i = 0; i < products.length; i++) {
-		//productUrlArray.push(products[i].href);
 		productUrl = products[i].href
 		editProductData(i, productUrl);
 	}
