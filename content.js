@@ -1,8 +1,17 @@
 var products = document.getElementsByClassName("btn--primary product-tile__cta hidden-desktop");
-var counter = 0;
-for(var j = 0; j < products.length; j++) {
-	var productUrl = products[j].href;
 
+getProductUrls();
+
+function getProductUrls() {
+	for(var i = 0; i < products.length; i++) {
+		//productUrlArray.push(products[i].href);
+		productUrl = products[i].href
+		editProductData(i, productUrl);
+	}
+}
+
+function editProductData(count, productUrl) {
+	console.log(count + ' ' + productUrl);
 	$.ajax({
 		type: 'GET',
 		url: productUrl,
@@ -16,9 +25,8 @@ for(var j = 0; j < products.length; j++) {
 				var unitString = weight + ': ' + price + ' ';
 				productInfoString += unitString;
 			}
-			var classTag = '.product-tile__price' + ':eq(' + counter + ')';
+			var classTag = '.product-tile__price' + ':eq(' + count + ')';
 			$(classTag).text(productInfoString);
-			counter++
 		},
 		error: function() {
 			console.log('Error Loading');
