@@ -18,7 +18,6 @@ function editProductData(count, productUrl) {
 		dataType: 'json',
 		success: function(response) {
 			var units = response.product.variants;
-			var productInfoString = "";
 			for (var i = 0; i < units.length; i++) {
 				var weight = units[i].title;
 				var price = units[i].price;
