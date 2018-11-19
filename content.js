@@ -1,5 +1,4 @@
-var products = document.getElementsByClassName("btn--primary product-tile__cta hidden-desktop");
-
+var products = document.getElementsByClassName("btn--primary product-tile__cta");
 getProductUrls();
 
 function getProductUrls() {
