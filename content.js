@@ -1,6 +1,5 @@
 var products = document.getElementsByClassName("btn--primary product-tile__cta");
 var windowWidth = $(window).width();
-console.log(windowWidth);
 
 getProductUrls();
 
@@ -41,6 +40,3 @@ function editProductData(count, productUrl) {
 		}
 	});
 }
-
-//verify product type is cannabis before editing post
-//if weight is default title remove
