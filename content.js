@@ -1,5 +1,7 @@
 var products = document.getElementsByClassName("btn--primary product-tile__cta");
-//$(".product-tile__cta").hide();
+var windowWidth = $(window).width();
+console.log(windowWidth);
+
 getProductUrls();
 
 function getProductUrls() {
@@ -11,7 +13,11 @@ function getProductUrls() {
 
 function editProductData(count, productUrl) {
 	var classTag = '.product-tile__price' + ':eq(' + count + ')';
-	$(classTag).replaceWith( '<ul class="product-tile__price" style="list-style: none; font-size: 1rem;"></ul>');
+	if (windowWidth > 1279) {
+		$(classTag).replaceWith( '<ul class="product-tile__price" style="list-style: none; font-size: 1rem;"></ul>');
+	} else {
+		$(classTag).replaceWith( '<ul class="product-tile__price" style="list-style: none; font-size: 0.75rem;"></ul>');
+	}
 	$.ajax({
 		type: 'GET',
 		url: productUrl,
